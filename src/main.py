@@ -18,8 +18,8 @@ def top_10_tfidf(csv_file_path, n_words):
     
     '''
     bible_csv = pd.read_csv(csv_file_path)
-    patt = r"[^\w,;:'()\s.!?]"
-    cleaned_csv = bible_csv['Text'].str.replace(patt, '', regex=True)
+    pattern = r"[^\w,;:'()\s.!?]"
+    cleaned_csv = bible_csv['Text'].str.replace(pattern, '', regex=True)
     bible_csv = bible_csv.assign(clean=cleaned_csv)
     bible_csv = (
             bible_csv
